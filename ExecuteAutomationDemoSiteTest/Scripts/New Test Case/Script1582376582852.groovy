@@ -20,19 +20,29 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://executeautomation.com/demosite/Login.html')
 
-WebUI.setText(findTestObject('Object Repository/Page_Execute Automation/input_Login_UserName'), 'gekif')
+WebUI.setText(findTestObject('Object Repository/Page_Execute Automation/input_Login_UserName'), 
+	findTestData('New Test Data For TestCase').getValue(
+        "UserName", 1))
 
-WebUI.setText(findTestObject('Object Repository/Page_Execute Automation/input_Login_Password'), 'gekif')
+WebUI.setText(findTestObject('Object Repository/Page_Execute Automation/input_Login_Password'), 
+	findTestData('New Test Data For TestCase').getValue(
+		"Password", 1))
 
 WebUI.click(findTestObject('Object Repository/Page_Execute Automation/input_Login_Login'))
 
 WebUI.selectOptionByValue(findTestObject('Object Repository/Page_Execute Automation/select_SelectMrMs'), '1', true)
 
-WebUI.setText(findTestObject('Object Repository/Page_Execute Automation/input_Initial_Initial'), 'DM')
+WebUI.setText(findTestObject('Object Repository/Page_Execute Automation/input_Initial_Initial'), 
+	findTestData('New Test Data For TestCase').getValue(
+		"Initial", 1))
 
-WebUI.setText(findTestObject('Object Repository/Page_Execute Automation/input__FirstName'), 'Dzulfikar')
+WebUI.setText(findTestObject('Object Repository/Page_Execute Automation/input__FirstName'), 
+	findTestData('New Test Data For TestCase').getValue(
+		"FirstName", 1))
 
-WebUI.setText(findTestObject('Object Repository/Page_Execute Automation/input_Middle Name_MiddleName'), 'Maulana')
+WebUI.setText(findTestObject('Object Repository/Page_Execute Automation/input_Middle Name_MiddleName'), 
+	findTestData('New Test Data For TestCase').getValue(
+		"LastName", 1))
 
 WebUI.click(findTestObject('Object Repository/Page_Execute Automation/td_English Hindi'))
 
@@ -42,17 +52,23 @@ WebUI.click(findTestObject('Object Repository/Page_Execute Automation/input_Engl
 
 WebUI.click(findTestObject('Object Repository/Page_Execute Automation/a_HtmlPopup'))
 
-WebUI.switchToWindowTitle('Popup Window')
+WebUI.switchToWindowIndex(1)
 
 WebUI.selectOptionByValue(findTestObject('Object Repository/Page_Popup Window/select_SelectMrMs'), '1', true)
 
-WebUI.setText(findTestObject('Object Repository/Page_Popup Window/input_Initial_Initial'), 'FP')
+WebUI.setText(findTestObject('Object Repository/Page_Popup Window/input_Initial_Initial'), 
+		findTestData('New Test Data For TestCase').getValue(
+		"Initial", 2))
 
-WebUI.setText(findTestObject('Object Repository/Page_Popup Window/input__FirstName'), 'Febrina')
+WebUI.setText(findTestObject('Object Repository/Page_Popup Window/input__FirstName'), 
+		findTestData('New Test Data For TestCase').getValue(
+		"FirstName", 2))
 
 WebUI.setText(findTestObject('Object Repository/Page_Popup Window/input_Middle Name_MiddleName'), 'Supriyono')
 
-WebUI.setText(findTestObject('Object Repository/Page_Popup Window/input__LastName'), 'Pujihastuti')
+WebUI.setText(findTestObject('Object Repository/Page_Popup Window/input__LastName'), 
+		findTestData('New Test Data For TestCase').getValue(
+		"LastName", 2))
 
 WebUI.click(findTestObject('Object Repository/Page_Popup Window/span_Gender     Male Female'))
 
@@ -62,9 +78,8 @@ WebUI.selectOptionByValue(findTestObject('Object Repository/Page_Popup Window/se
 
 WebUI.click(findTestObject('Object Repository/Page_Popup Window/input_Country_Save'))
 
-WebUI.click(findTestObject('Object Repository/Page_Popup Window/input_Country_Save'))
-
-WebUI.switchToWindowTitle('Execute Automation')
+// To Switch to an Original Window
+WebUI.switchToWindowIndex(0)
 
 WebUI.click(findTestObject('Object Repository/Page_Execute Automation/input_Click for Generating JavaScript Alert_8072d0'))
 
